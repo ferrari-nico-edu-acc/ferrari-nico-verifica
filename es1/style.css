@@ -3,6 +3,7 @@
 }
 
 body {
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,10 +55,10 @@ body.dark {
     gap: 5px;
 }
 
-#opacity_span.dark {
-    color: white;
-}
-
 #timer_text {
     margin: 0;
+}
+
+.dark {
+    color: white
 }

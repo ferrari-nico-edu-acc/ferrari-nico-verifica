@@ -43,17 +43,29 @@ light_switch.addEventListener("click",() => {
     document.body.classList.toggle("dark");
     lamp.classList.toggle("dark");
     opacity_span.classList.toggle("dark");
+    timer_text.classList.toggle("dark");
 });
 
-let minutes_left = 0
+let minutes_left = 0;
+let interval_id = 0;
 
 timer_set_button.addEventListener("click",() => {
     if (timer_input.value === "") {
         return;
     }
     const minutes = Number(timer_input.value);
-    if (!isFinite(minutes)) {
+    if (!isFinite(minutes) || minutes <= 1) {
         return;
     }
-    timer_text.innerText = `La luce si spegnerà tra ${minutes} minuti`
+    minutes_left = minutes;
+    timer_text.innerText = `La luce si spegnerà tra ${minutes_left} minut${minutes_left != 1 ? "i" : "o"}`
+    interval_id = setInterval(() => {
+        minutes_left--;
+        if (minutes_left === 0) {
+            timer_text.innerText = `Il timer ha finito.`;
+            clearInterval(interval_id);
+            return;
+        }
+        timer_text.innerText = `La luce si spegnerà tra ${minutes_left} minut${minutes_left != 1 ? "i" : "o"}`
+    },60_000)
 })
