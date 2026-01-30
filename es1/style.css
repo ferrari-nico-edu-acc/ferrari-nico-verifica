@@ -18,5 +18,25 @@ body {
     border-style: solid;
     border-color: black;
     border-width: 5px;
-    background-color: yellow;
+}
+
+#lamp.warm {
+    background-color: gold;
+}
+
+#lamp.cold {
+    background-color: darkorange;
+}
+
+@keyframes rgb_anim {
+    0% { background-color: red; }
+    33% { background-color: lime; }
+    66% { background-color: blue; }
+    100% { background-color: red; }
+}
+
+#lamp.rgb {
+    animation-name: rgb_anim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
