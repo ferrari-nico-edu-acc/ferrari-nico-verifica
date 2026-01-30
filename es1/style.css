@@ -57,3 +57,7 @@ body.dark {
 #opacity_span.dark {
     color: white;
 }
+
+#timer_text {
+    margin: 0;
+}

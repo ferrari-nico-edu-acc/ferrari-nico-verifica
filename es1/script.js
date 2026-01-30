@@ -12,6 +12,12 @@ const opacity_slider = document.querySelector("#opacity_slider");
 const light_switch = document.querySelector("#light_switch");
 /** @type {HTMLSpanElement} */
 const opacity_span = document.querySelector("#opacity_span");
+/** @type {HTMLInputElement} */
+const timer_input = document.querySelector("#timer_input");
+/** @type {HTMLButtonElement} */
+const timer_set_button = document.querySelector("#timer_set_button");
+/** @type {HTMLHeadingElement} */
+const timer_text = document.querySelector("#timer_text");
 
 let last_color = "warm";
 
@@ -38,3 +44,16 @@ light_switch.addEventListener("click",() => {
     lamp.classList.toggle("dark");
     opacity_span.classList.toggle("dark");
 });
+
+let minutes_left = 0
+
+timer_set_button.addEventListener("click",() => {
+    if (timer_input.value === "") {
+        return;
+    }
+    const minutes = Number(timer_input.value);
+    if (!isFinite(minutes)) {
+        return;
+    }
+    timer_text.innerText = `La luce si spegnerà tra ${minutes} minuti`
+})
