@@ -24,6 +24,10 @@ body.dark {
     border-width: 5px;
 }
 
+#lamp.dark {
+    box-shadow: rgba(255, 251, 0, 0.1) 5px 5px 5px 5px;
+}
+
 #lamp.warm {
     background-color: gold;
 }
