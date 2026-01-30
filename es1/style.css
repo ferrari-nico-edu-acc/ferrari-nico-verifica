@@ -40,3 +40,8 @@ body {
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
+
+#slider {
+    display: flex;
+    gap: 5px;
+}
