@@ -8,6 +8,10 @@ const cold_button = document.querySelector("#cold_button");
 const rgb_button = document.querySelector("#rgb_button");
 /** @type {HTMLInputElement} */
 const opacity_slider = document.querySelector("#opacity_slider");
+/** @type {HTMLButtonElement} */
+const light_switch = document.querySelector("#light_switch");
+/** @type {HTMLSpanElement} */
+const opacity_span = document.querySelector("#opacity_span");
 
 let last_color = "warm";
 
@@ -26,5 +30,11 @@ opacity_slider.addEventListener("input",() => {
     if (!isFinite(opacity)) {
         return;
     }
-    lamp.style.opacity = `${opacity/100}`
-})
+    lamp.style.opacity = `${opacity/100}`;
+});
+
+light_switch.addEventListener("click",() => {
+    document.body.classList.toggle("dark");
+    lamp.classList.toggle("dark");
+    opacity_span.classList.toggle("dark");
+});

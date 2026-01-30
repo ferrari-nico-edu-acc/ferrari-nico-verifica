@@ -11,6 +11,10 @@ body {
     gap: 10px;
 }
 
+body.dark {
+    background-color: black;
+}
+
 #lamp {
     width: 200px;
     height: 200px;
@@ -44,4 +48,8 @@ body {
 #slider {
     display: flex;
     gap: 5px;
+}
+
+#opacity_span.dark {
+    color: white;
 }
