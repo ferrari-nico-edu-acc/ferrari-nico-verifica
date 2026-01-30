@@ -8,6 +8,7 @@ body {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    gap: 10px;
 }
 
 #lamp {
